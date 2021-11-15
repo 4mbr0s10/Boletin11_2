@@ -23,24 +23,37 @@ public class Boletin11_2 {
         numTry = Integer.parseInt(auxNumTry);
 
         for (int i = 1; i <= numTry; i++) {
-            String auxResposta = JOptionPane.showInputDialog("Introduce una respuesta: ");
+            String auxResposta = JOptionPane.showInputDialog("Introduce un número entre 1 y 50: ");
             numResp = Integer.parseInt(auxResposta);
-            if (numResp == num1) {
+            if(numResp>50 || numResp<1){
+                
+                JOptionPane.showMessageDialog(null,"El número tiene que estar entre 1 y 50!!!!!");
+                    numTry++;
+            }else if (numResp == num1) {
 
                 JOptionPane.showMessageDialog(null, "EL NUMERO ES CORRECTO!!!!!!");
                 i = numTry + 1;
 
             } else if (numResp != num1) {
+                    int numBetween=num1-numResp;
+                if(numBetween>20){
+                    JOptionPane.showMessageDialog(null,"Muy lejos!");
                     
-                
-                
-                JOptionPane.showMessageDialog(null, "Te has quedado corto. Prueba con uno mayor.");
-                
-                
-                
-                
-                
-                
+                    
+                }if(numBetween>=10 && numBetween<=20){
+                    JOptionPane.showMessageDialog(null,"Lejos!");
+                    
+                    
+                }if(numBetween>5 && numBetween<10){
+                    
+                    JOptionPane.showMessageDialog(null,"Cerca!");
+                    
+                }if(numBetween<=5){
+                    
+                    JOptionPane.showMessageDialog(null,"Muy cerca!");
+                    
+                }
+  
                 JOptionPane.showMessageDialog(null, "Te quedan " + (numTry - i) + " intentos.");
 
             } 
